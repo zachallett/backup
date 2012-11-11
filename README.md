@@ -52,6 +52,7 @@ Below you find a list of components that Backup currently supports. If you'd lik
 ### Storage Locations and Services
 
 - Amazon Simple Storage Service (S3)
+- Amazon Glacier
 - Rackspace Cloud Files (Mosso)
 - Ninefold Cloud Storage
 - Dropbox Web Service
@@ -339,7 +340,7 @@ View the [issue log](https://github.com/meskyanichi/backup/issues) and post them
   </tr>
   <tr>
     <td><a href="https://github.com/tomash" target="_blank">Tomasz Stachewicz ( tomash )</a></td>
-    <td>Helping discuss MongoDump Lock/FSync problem + Submitting a patch</td>
+    <td>Amazon Glacier Support, helping discuss MongoDump Lock/FSync problem + Submitting a patch</td>
   </tr>
   <tr>
     <td><a href="https://github.com/lapluviosilla" target="_blank">Paul Strong ( lapluviosilla )</a></td>
