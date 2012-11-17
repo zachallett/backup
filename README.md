@@ -123,8 +123,8 @@ Below you find a list of components that Backup currently supports. If you'd lik
 
 ### Supported Ruby versions (Tested with RSpec)
 
+- Ruby 2.0.0
 - Ruby 1.9.3
-- Ruby 1.9.2
 - Ruby 1.8.7
 
 
@@ -441,8 +441,8 @@ View the [issue log](https://github.com/meskyanichi/backup/issues) and post them
 
 - Fork the project
 - Write RSpec tests, and test against:
+  - Ruby 2.0.0
   - Ruby 1.9.3
-  - Ruby 1.9.2
   - Ruby 1.8.7
 - Try to keep the overall *structure / design* of the gem the same
 
@@ -451,17 +451,21 @@ I can't guarantee I'll pull every pull request. Also, I may accept your pull req
 
 ### Easily run tests against all three Ruby versions
 
-Install [RVM](https://rvm.beginrescueend.com/) and use it to install Ruby 1.9.3, 1.9.2 and 1.8.7.
+Install [RVM](https://rvm.beginrescueend.com/) and use it to install Ruby 2.0.0, 1.9.3, and 1.8.7.
 
     rvm get latest && rvm reload
-    rvm install 1.9.3 && rvm install 1.9.2 && rvm install 1.8.7
+    rvm pkg install openssl
+    rvm pkg install iconv
+    rvm install 2.0.0-preview1 -C --with-openssl-dir=$HOME/.rvm/usr,--with-iconv-dir=$HOME/.rvm/usr
+    rvm install 1.9.3 -C --with-openssl-dir=$HOME/.rvm/usr,--with-iconv-dir=$HOME/.rvm/usr
+    rvm install 1.8.7 -C --with-openssl-dir=$HOME/.rvm/usr,--with-iconv-dir=$HOME/.rvm/usr
 
 Once these are installed, go ahead and install all the necessary dependencies.
 
     cd backup
-    rvm use 1.9.3 && gem install bundler && bundle install
-    rvm use 1.9.2 && gem install bundler && bundle install
-    rvm use 1.8.7 && gem install bundler && bundle install
+    rvm use 2.0.0-preview1 && bundle install
+    rvm use 1.9.3 && bundle install
+    rvm use 1.8.7 && bundle install
 
 The Backup gem uses [Guard](https://github.com/guard/guard) along with [Guard::RSpec](https://github.com/guard/guard-rspec) to quickly and easily test Backup's code against all four Rubies. If you've done the above, all you have to do is run:
 
